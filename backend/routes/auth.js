@@ -15,6 +15,10 @@ router.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
+        if (!process.env.JWT_SECRET) {
+            console.error('CRITICAL: JWT_SECRET is missing from environment variables!');
+        }
+
         let user = await User.findOne({ email });
 
         if (user) {
@@ -47,13 +51,16 @@ router.post('/register', async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: 360000 },
             (err, token) => {
-                if (err) throw err;
+                if (err) {
+                    console.error('JWT Signing Error:', err);
+                    return res.status(500).json({ msg: 'Token generation failure' });
+                }
                 res.json({ token });
             }
         );
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
+        console.error('REGISTRATION ERROR STACK:', err);
+        res.status(500).json({ msg: 'Server error', error: err.message });
     }
 });
 
