@@ -59,9 +59,15 @@ router.get('/search', auth, async (req, res) => {
         // Check if query contains '#'
         if (query.includes('#')) {
             const [namePart, tagPart] = query.split('#');
-            filter.name = { $regex: new RegExp('^' + namePart.trim() + '$', 'i') };
-            if (tagPart) {
-                filter.tag = tagPart.trim();
+            if (namePart && tagPart && tagPart.length === 4) {
+                filter = {
+                    ...filter,
+                    name: { $regex: new RegExp('^' + namePart.trim() + '$', 'i') },
+                    tag: tagPart.trim()
+                };
+            } else {
+                // If format is wrong (e.g. no tag after #), return empty to avoid confusion
+                return res.json([]);
             }
         } else {
             // Just search by name if no hash provided

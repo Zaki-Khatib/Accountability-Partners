@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ msg: 'User already exists' });
         }
 
-        const generateTag = () => Math.floor(1000 + Math.random() * 9000).toString();
+        const generateTag = () => Math.floor(Math.random() * 10000).toString().padStart(4, '0');
 
         user = new User({
             name,
@@ -137,13 +137,22 @@ router.post('/google', async (req, res) => {
                 googleId: payloadParams.sub
             });
             await user.save();
-        } else if (!user.googleId) {
-            // Link google account to existing email
-            user.googleId = payloadParams.sub;
+        } else {
+            // Ensure existing users have a 4-digit tag
+            let updated = false;
+            if (!user.tag || user.tag.length !== 4) {
+                user.tag = generateTag();
+                updated = true;
+            }
+            if (!user.googleId) {
+                user.googleId = payloadParams.sub;
+                updated = true;
+            }
             if (!user.photoUrl || user.photoUrl.includes('dicebear')) {
                 user.photoUrl = payloadParams.picture;
+                updated = true;
             }
-            await user.save();
+            if (updated) await user.save();
         }
 
         const payload = { user: { id: user.id } };
