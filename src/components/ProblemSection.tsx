@@ -18,7 +18,7 @@ export default function ProblemSection() {
           <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">
             Staying consistent is{" "}
             <span
-              className="italic inline-block pb-1"
+              className="italic inline-block pr-2 pb-1"
               style={{
                 background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(270, 60%, 68%))",
                 WebkitBackgroundClip: "text",

@@ -72,7 +72,7 @@ export default function HeroSection({ onNavReady }: HeroSectionProps) {
         <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1] mb-6">
           Stay on track with the{" "}
           <span
-            className="italic"
+            className="italic inline-block pr-2"
             style={{
               background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(16, 95%, 68%), hsl(270, 60%, 68%))",
               WebkitBackgroundClip: "text",
