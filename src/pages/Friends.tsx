@@ -10,6 +10,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { UserPlus, Activity, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import FriendsEasterEgg from "@/components/FriendsEasterEgg";
 
 // Removed MOCK_FRIENDS, using real backend data now
 
@@ -116,17 +117,18 @@ export default function Friends() {
                 >
                     <div>
                         <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-                            Your <span
-                                style={{
-                                    background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(16, 95%, 68%), hsl(270, 60%, 68%))",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                }}
-                            >Partners</span>
+                            Your <FriendsEasterEgg>
+                                <span
+                                    style={{
+                                        background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(16, 95%, 68%), hsl(270, 60%, 68%))",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent",
+                                        backgroundClip: "text",
+                                    }}
+                                >Friends</span></FriendsEasterEgg>
                         </h1>
                         <p className="text-muted-foreground text-lg mt-2">
-                            See how your accountability partners are doing today.
+                            See how your accountability <FriendsEasterEgg>friends</FriendsEasterEgg> are doing today.
                         </p>
                         {user && (
                             <p className="text-sm font-medium mt-2 p-2 bg-muted/50 rounded-md inline-block">

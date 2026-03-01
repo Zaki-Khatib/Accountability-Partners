@@ -136,15 +136,26 @@
 
 @layer utilities {
   .gradient-brand {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--gradient-start)),
-      hsl(var(--gradient-mid)),
-      hsl(var(--gradient-end))
-    );
+    background: linear-gradient(135deg,
+        hsl(var(--gradient-start)),
+        hsl(var(--gradient-mid)),
+        hsl(var(--gradient-end)));
   }
 
   .glass-card {
     @apply bg-card/70 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+
+  .heart-hover {
+    @apply transition-all duration-300 inline-block;
+  }
+
+  /* Fill when the icon itself or any parent with .group or .heart-parent is hovered */
+  .heart-hover:hover,
+  .group:hover .heart-hover,
+  .heart-parent:hover .heart-hover {
+    fill: hsl(var(--gradient-start));
+    stroke: hsl(var(--gradient-start));
+    transform: scale(1.2);
   }
 }

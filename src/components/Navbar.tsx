@@ -10,11 +10,11 @@ interface NavbarProps {
 }
 
 const navLinks = [
-  { label: "Features", href: "/#features" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Dashboard", href: "/journey" },
-  { label: "Friends", href: "/friends" },
-  { label: "About", href: "/about" },
+  { id: "features", label: "Features", href: "/#features" },
+  { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
+  { id: "dashboard", label: "Dashboard", href: "/journey" },
+  { id: "friends", label: "Friends", href: "/friends" },
+  { id: "about", label: "About", href: "/about" },
 ];
 
 export default function Navbar({ visible }: NavbarProps) {
@@ -53,7 +53,7 @@ export default function Navbar({ visible }: NavbarProps) {
           {navLinks.map((link) =>
             link.href.startsWith("/#") ? (
               <button
-                key={link.label}
+                key={link.id}
                 onClick={() => handleNavClick(link.href)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -61,7 +61,7 @@ export default function Navbar({ visible }: NavbarProps) {
               </button>
             ) : (
               <Link
-                key={link.label}
+                key={link.id}
                 to={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -117,7 +117,7 @@ export default function Navbar({ visible }: NavbarProps) {
               {navLinks.map((link) =>
                 link.href.startsWith("/#") ? (
                   <button
-                    key={link.label}
+                    key={link.id}
                     onClick={() => handleNavClick(link.href)}
                     className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -125,7 +125,7 @@ export default function Navbar({ visible }: NavbarProps) {
                   </button>
                 ) : (
                   <Link
-                    key={link.label}
+                    key={link.id}
                     to={link.href}
                     onClick={() => setMobileOpen(false)}
                     className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"

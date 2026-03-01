@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { User, Quote, Rocket, Users, Heart, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import FriendsEasterEgg from "@/components/FriendsEasterEgg";
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
             className="text-center mb-20"
           >
             <h1 className="font-display text-5xl md:text-7xl text-foreground mb-8 tracking-tight">
-              Our <span className="italic gradient-text pr-2 py-1" style={{
+              My <span className="italic gradient-text pr-2 py-1" style={{
                 background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(270, 60%, 68%))",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -29,7 +30,7 @@ export default function About() {
               }}>Story</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto italic">
-              "To help me and my friends grow together."
+              "To help me and my <FriendsEasterEgg>friends</FriendsEasterEgg> grow together."
             </p>
           </motion.div>
 
@@ -49,22 +50,12 @@ export default function About() {
                 to bridge the gap between setting goals and actually reaching them.
               </p>
 
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed border-l-2 border-primary/20 pl-6 my-8">
+              <div className="text-lg text-muted-foreground leading-relaxed mt-8">
                 <p>
-                  Whether it’s waking up early, going for a run, exercising consistently, or finally
-                  finishing that side project you’ve been putting off, <span className="text-foreground font-medium">everything feels different when someone is counting on you.</span>
-                </p>
-
-                <p>
-                  There’s something powerful about knowing you’re not doing it alone. A simple check-in.
-                  A short message. A quiet <span className="italic">“Did you show up today?”</span> That small layer of
-                  accountability can change everything.
-                </p>
-
-                <p>
-                  I didn’t want to build another complex productivity tool packed with dashboards and distractions.
-                  I wanted to create a <span className="text-foreground font-medium">simple space for real human connection and shared progress.</span> Something
-                  focused on consistency, trust, and showing up — together.
+                  Whether it’s waking up early, going for a run, exercising, or finishing a side project,
+                  everything feels different when someone is counting on you. I didn’t want to build another
+                  complex productivity tool, just a simple space for real connection and shared progress
+                  built on consistency and trust.
                 </p>
               </div>
             </motion.div>
@@ -123,7 +114,7 @@ export default function About() {
                 desc: "Track progress in real-time and stay focused on what matters most."
               },
               {
-                icon: <Heart className="text-purple-500" />,
+                icon: <Heart className="text-purple-500 heart-hover" />,
                 title: "Care",
                 desc: "Built on real friendships and the desire to see each other succeed."
               },

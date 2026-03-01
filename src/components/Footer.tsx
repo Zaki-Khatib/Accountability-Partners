@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
+import FriendsEasterEgg from "./FriendsEasterEgg";
 
 export default function Footer() {
   return (
@@ -15,8 +16,8 @@ export default function Footer() {
           <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
           <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
         </div>
-        <p className="text-xs text-muted-foreground">
-          Made with ❤️ for friends who care
+        <p className="text-xs text-muted-foreground flex items-center gap-1 group cursor-default">
+          Made with <Heart size={12} className="heart-hover inline" /> for <FriendsEasterEgg>friends</FriendsEasterEgg> who care
         </p>
       </div>
     </footer>

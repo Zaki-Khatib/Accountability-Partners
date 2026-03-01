@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart } from "lucide-react";
+import FriendsEasterEgg from "./FriendsEasterEgg";
 
 interface HeroSectionProps {
   onNavReady: () => void;
@@ -84,7 +85,7 @@ export default function HeroSection({ onNavReady }: HeroSectionProps) {
           </span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-          Build habits together with friends who genuinely care. Hold each other
+          Build habits together with <FriendsEasterEgg>friends</FriendsEasterEgg> who genuinely care. Hold each other
           accountable, celebrate wins, and grow side by side.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -99,12 +100,12 @@ export default function HeroSection({ onNavReady }: HeroSectionProps) {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full px-8 text-base hover:scale-105 transition-all duration-300 border-2"
+            className="rounded-full px-8 text-base hover:scale-105 transition-all duration-300 border-2 group"
             onClick={() =>
               document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            <Heart className="mr-2" size={16} />
+            <Heart className="mr-2 heart-hover" size={16} />
             See Features
           </Button>
         </div>
