@@ -22,6 +22,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: '',
     },
+    motto: {
+        type: String,
+        default: '',
+    },
+    focusArea: {
+        type: String,
+        default: '',
+    },
     progress: {
         type: Number,
         default: 0,

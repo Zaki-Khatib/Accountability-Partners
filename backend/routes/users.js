@@ -7,13 +7,15 @@ const User = require('../models/User');
 // @desc    Update user profile (note, photoUrl, etc)
 // @access  Private
 router.put('/profile', auth, async (req, res) => {
-    const { note, photoUrl, name } = req.body;
+    const { note, photoUrl, name, motto, focusArea } = req.body;
 
     // Build profile object
     const profileFields = {};
     if (name) profileFields.name = name;
     if (note !== undefined) profileFields.note = note;
     if (photoUrl) profileFields.photoUrl = photoUrl;
+    if (motto !== undefined) profileFields.motto = motto;
+    if (focusArea !== undefined) profileFields.focusArea = focusArea;
 
     try {
         let user = await User.findById(req.user.id);
