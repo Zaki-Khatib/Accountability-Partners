@@ -53,9 +53,12 @@ export default function HeroSection({ onNavReady }: HeroSectionProps) {
             opacity: stage >= 2 && stage < 4 ? 1 : 0,
           }}
           transition={{ duration: 0.6 }}
-          className="px-6"
+          className="flex items-center gap-3 px-6"
         >
-          <img src="/accountabilitypartnerslogo.png" alt="Accountability Partners" className="h-12 w-auto brightness-0 invert" />
+          <img src="/accountabilitypartnerslogo.png" alt="Logo" className="h-10 w-auto brightness-0 invert" />
+          <span className="text-primary-foreground font-bold text-2xl md:text-3xl whitespace-nowrap tracking-tight">
+            Accountability Partners
+          </span>
         </motion.div>
       </motion.div>
 
