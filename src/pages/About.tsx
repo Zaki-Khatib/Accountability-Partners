@@ -45,7 +45,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Accountability Partners was born from a simple truth: we're better together.
-                Founded by <span className="font-bold text-foreground">Zaki Khatib</span>, this platform started as a personal mission
+                Founded by <span className="text-foreground">Zaki Khatib</span>, this platform started as a personal mission
                 to bridge the gap between setting goals and actually reaching them.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">

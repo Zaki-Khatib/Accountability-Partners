@@ -7,6 +7,8 @@ interface User {
     tag: string;
     photoUrl?: string;
     note?: string;
+    motto?: string;
+    focusArea?: string;
     journals?: { date: string, text: string }[];
 }
 
