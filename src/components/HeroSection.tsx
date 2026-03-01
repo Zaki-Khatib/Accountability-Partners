@@ -47,16 +47,16 @@ export default function HeroSection({ onNavReady }: HeroSectionProps) {
           boxShadow: "0 30px 80px hsl(340 82% 52% / 0.25)",
         }}
       >
-        <motion.span
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: stage >= 2 && stage < 4 ? 1 : 0,
           }}
           transition={{ duration: 0.6 }}
-          className="text-primary-foreground font-bold text-2xl md:text-4xl whitespace-nowrap px-6 tracking-tight"
+          className="px-6"
         >
-          Accountability Partners
-        </motion.span>
+          <img src="/accountabilitypartnerslogo.png" alt="Accountability Partners" className="h-12 w-auto brightness-0 invert" />
+        </motion.div>
       </motion.div>
 
       {/* Content that fades in after animation */}
