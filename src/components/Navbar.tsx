@@ -43,8 +43,8 @@ export default function Navbar({ visible }: NavbarProps) {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50"
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-foreground tracking-tight">
-          Accountability Partners
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/accountabilitypartnerslogo.png" alt="Accountability Partners" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop */}
