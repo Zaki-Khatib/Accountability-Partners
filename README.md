@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
+# Accountability Partners Hub 🤝
 
-## Project info
+A comprehensive platform designed for personal growth and social accountability. Connect with friends, track your journey, and maintain mindful habits together.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Key Features
 
-## How can I edit this code?
+- **Social Connections**: Find and connect with accountability partners through a robust friend system.
+- **Project Journey**: Visualize your progress and stay on track with your goals.
+- **Personal Reflections**: Log daily journals and reflect on your growth.
+- **Modern User Profiles**: Customizable profiles showing focus areas, mottos, and activity.
+- **Interactive UI**: A sleek, modern design with animated backgrounds and smooth transitions.
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+### Frontend
+- **React 18** + **TypeScript**
+- **Vite** for lightning-fast builds
+- **Tailwind CSS** for styling
+- **shadcn/ui** & **Radix UI** for accessible, high-quality components
+- **Framer Motion** for fluid animations
+- **React Router Dom** for client-side navigation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### Backend
+- **Node.js** & **Express**
+- **MongoDB** + **Mongoose** for data persistence
+- **JWT (JSON Web Tokens)** for secure authentication
+- **Bcrypt** for password hashing
 
-Changes made via Lovable will be committed automatically to this repo.
+## ⚙️ Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16.x or higher recommended)
+- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Clone & Install
+```bash
+git clone <your-repo-url>
+cd accountability-partners-hub
+npm install
 ```
 
-**Edit a file directly in GitHub**
+### 2. Backend Setup
+Navigate to the `backend` directory and install dependencies:
+```bash
+cd backend
+npm install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the `backend/` folder and add your configuration:
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/accountability-partners
+JWT_SECRET=your_jwt_secret_here
+```
 
-**Use GitHub Codespaces**
+### 3. Running the App
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+#### Start the Backend (API Server)
+```bash
+cd backend
+node server.js
+```
+The server will run on `http://localhost:5000`.
 
-## What technologies are used for this project?
+#### Start the Frontend (Vite Dev Server)
+In a new terminal:
+```bash
+npm run dev
+```
+The frontend will be available at `http://localhost:8080`.
 
-This project is built with:
+## 📂 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `/src`: Frontend React application.
+- `/backend`: Express API server and database models.
+- `/public`: Static assets.
 
-## How can I deploy this project?
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Built with love for builders.*
