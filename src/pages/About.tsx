@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { User, Quote, Rocket, Users, Heart } from "lucide-react";
+import { User, Quote, Rocket, Users, Heart, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
             className="text-center mb-20"
           >
             <h1 className="font-display text-5xl md:text-7xl text-foreground mb-8 tracking-tight">
-              Our <span className="italic gradient-text" style={{
+              Our <span className="italic gradient-text pr-2 py-1" style={{
                 background: "linear-gradient(135deg, hsl(340, 82%, 52%), hsl(270, 60%, 68%))",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -66,12 +66,21 @@ export default function About() {
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-24 h-24 rounded-full gradient-brand p-1 mb-6">
-                      <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                        <User size={48} className="text-primary/50" />
+                      <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                        <img src="/zaki.jpeg" alt="Zaki Khatib" className="w-full h-full object-cover" />
                       </div>
                     </div>
                     <h3 className="text-2xl font-bold mb-1">Zaki Khatib</h3>
-                    <p className="text-sm text-primary font-medium tracking-widest uppercase mb-4">Founder & Developer</p>
+                    <p className="text-sm text-primary font-medium tracking-widest uppercase mb-4 text-center">Founder & Developer</p>
+                    <a
+                      href="https://github.com/Zaki-Khatib"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
+                    >
+                      <Github size={16} />
+                      @Zaki-Khatib
+                    </a>
                     <div className="flex gap-4 justify-center">
                       <Quote className="text-muted-foreground/30 rotate-180" size={32} />
                       <p className="text-base text-muted-foreground italic max-w-[250px]">
