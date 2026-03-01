@@ -45,15 +45,28 @@ export default function About() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Accountability Partners was born from a simple truth: we're better together.
-                Founded by <span className="text-foreground">Zaki Khatib</span>, this platform started as a personal mission
+                Founded by Zaki Khatib, this platform started as a personal mission
                 to bridge the gap between setting goals and actually reaching them.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether it's waking up early, hitting the gym, or finishing that side project,
-                having someone who's counting on you changes everything. We didn't want another
-                complex productivity tool — we wanted a place for real human connection and
-                shared progress.
-              </p>
+
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed border-l-2 border-primary/20 pl-6 my-8">
+                <p>
+                  Whether it’s waking up early, going for a run, exercising consistently, or finally
+                  finishing that side project you’ve been putting off, <span className="text-foreground font-medium">everything feels different when someone is counting on you.</span>
+                </p>
+
+                <p>
+                  There’s something powerful about knowing you’re not doing it alone. A simple check-in.
+                  A short message. A quiet <span className="italic">“Did you show up today?”</span> That small layer of
+                  accountability can change everything.
+                </p>
+
+                <p>
+                  I didn’t want to build another complex productivity tool packed with dashboards and distractions.
+                  I wanted to create a <span className="text-foreground font-medium">simple space for real human connection and shared progress.</span> Something
+                  focused on consistency, trust, and showing up — together.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
