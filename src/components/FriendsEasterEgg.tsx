@@ -7,11 +7,9 @@ interface FriendsEasterEggProps {
 }
 
 const images = [
-    "/friends.jpeg",
     "/friends1.jpeg",
     "/friends2.jpeg",
-    "/friends3.jpeg",
-    "/friends4.jpeg"
+    "/friends3.jpeg"
 ];
 
 export default function FriendsEasterEgg({ children }: FriendsEasterEggProps) {
