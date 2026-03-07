@@ -1,82 +1,106 @@
-# Accountability Partners Hub 🤝
+Accountability Partners 
 
-A comprehensive platform designed for personal growth and social accountability. Connect with friends, track your journey, and maintain mindful habits together.
+Accountability Partners is a platform built to help people stay consistent with their goals by connecting with others who want to grow and improve together. When someone else knows what you're working on, you're far more likely to stay committed.
 
-## 🚀 Key Features
+Users can connect with accountability partners, track their progress, and reflect on their journey over time.
 
-- **Social Connections**: Find and connect with accountability partners through a robust friend system.
-- **Project Journey**: Visualize your progress and stay on track with your goals.
-- **Personal Reflections**: Log daily journals and reflect on your growth.
-- **Modern User Profiles**: Customizable profiles showing focus areas, mottos, and activity.
-- **Interactive UI**: A sleek, modern design with animated backgrounds and smooth transitions.
+Live Demo
 
-## 🛠️ Tech Stack
+Frontend:
+https://accountabilitypartners.netlify.app/
 
-### Frontend
-- **React 18** + **TypeScript**
-- **Vite** for lightning-fast builds
-- **Tailwind CSS** for styling
-- **shadcn/ui** & **Radix UI** for accessible, high-quality components
-- **Framer Motion** for fluid animations
-- **React Router Dom** for client-side navigation
+Backend API:
+https://accountability-partners-1.onrender.com
 
-### Backend
-- **Node.js** & **Express**
-- **MongoDB** + **Mongoose** for data persistence
-- **JWT (JSON Web Tokens)** for secure authentication
-- **Bcrypt** for password hashing
+Features
 
-## ⚙️ Getting Started
+Partner Connections
+Connect with people who want to stay accountable and work toward their goals together.
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v16.x or higher recommended)
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
+Progress Tracking
+Track personal goals and monitor progress over time.
 
-### 1. Clone & Install
-```bash
+Daily Reflections
+Write journal entries to reflect on your progress, thoughts, and challenges.
+
+User Profiles
+Personal profiles where users can display focus areas, mottos, and activity.
+
+Modern Interface
+Clean UI with smooth transitions and responsive design.
+
+Tech Stack
+Frontend
+
+React 18
+
+TypeScript
+
+Vite
+
+Tailwind CSS
+
+shadcn/ui + Radix UI
+
+Framer Motion
+
+React Router DOM
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+JWT Authentication
+
+Bcrypt for password hashing
+
+Getting Started
+Prerequisites
+
+Node.js (v16 or higher)
+
+MongoDB (local or MongoDB Atlas)
+
+Clone the Repository
 git clone <your-repo-url>
-cd accountability-partners-hub
+cd accountability-partners
 npm install
-```
+Backend Setup
 
-### 2. Backend Setup
-Navigate to the `backend` directory and install dependencies:
-```bash
+Navigate to the backend folder:
+
 cd backend
 npm install
-```
 
-Create a `.env` file in the `backend/` folder and add your configuration:
-```env
+Create a .env file inside the backend directory:
+
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/accountability-partners
-JWT_SECRET=your_jwt_secret_here
-```
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+Running the Application
 
-### 3. Running the App
+Start the backend server:
 
-#### Start the Backend (API Server)
-```bash
-cd backend
 node server.js
-```
-The server will run on `http://localhost:5000`.
 
-#### Start the Frontend (Vite Dev Server)
-In a new terminal:
-```bash
+Backend will run at:
+
+http://localhost:5000
+
+Start the frontend in another terminal:
+
 npm run dev
-```
-The frontend will be available at `http://localhost:8080`.
 
-## 📂 Project Structure
+Frontend will run at:
 
-- `/src`: Frontend React application.
-- `/backend`: Express API server and database models.
-- `/public`: Static assets.
+http://localhost:8080
+Project Structure
+/src        -> React frontend
+/backend    -> Express API and database models
+/public     -> Static assets
 
-## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-*Built with love for builders.*
+Built as a simple platform for people who want to stay accountable and keep moving forward.
