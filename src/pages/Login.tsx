@@ -5,12 +5,12 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from '@react-oauth/google';
-import { User, Eye, EyeOff, Facebook, Twitter, Shield } from "lucide-react";
+import { Mail, Lock, ArrowRight, Heart, Sparkles, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const { login, loginWithGoogle, user } = useAuth();
     const { toast } = useToast();
@@ -42,148 +42,190 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex relative overflow-hidden bg-[#eff3f8]">
-            {/* Background Illustration Simulation (Abstract Blue Waves) */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <svg className="absolute w-[150%] h-[150%] -left-[20%] -top-[20%] opacity-20" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-                    <path fill="#2c4295" d="M0,500 C150,600 250,300 500,500 C750,700 850,400 1000,500 L1000,1000 L0,1000 Z" />
-                    <path fill="#1a2b72" d="M0,600 C200,800 300,500 600,700 C900,900 950,600 1000,700 L1000,1000 L0,1000 Z" />
-                </svg>
-            </div>
+        <div className="min-h-screen flex">
+            {/* Left Panel — Gradient Hero */}
+            <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="hidden lg:flex lg:w-1/2 relative overflow-hidden"
+            >
+                {/* Gradient background */}
+                <div className="absolute inset-0 gradient-brand" />
 
-            {/* Main Layout Area */}
-            <div className="w-full flex justify-end items-center p-6 sm:p-12 z-10 max-w-7xl mx-auto">
-                {/* Left Side Branding Placeholder (Hidden on small screens) */}
-                <div className="hidden lg:flex flex-col flex-1 text-[#1a2b72] px-12">
-                    <h1 className="text-5xl font-extrabold mb-4 tracking-tight">Accountability<br />Partners</h1>
-                    <p className="text-xl font-medium max-w-md">Rowing together towards success. Log in to continue your journey.</p>
+                {/* Abstract shapes */}
+                <div className="absolute top-32 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-10 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+
+                {/* Content */}
+                <div className="relative z-10 flex flex-col justify-between p-12 text-white w-full">
+                    <div>
+                        <div
+                            className="flex items-center gap-2 cursor-pointer"
+                            onClick={() => navigate("/")}
+                        >
+                            <Heart className="w-8 h-8 fill-white/80" />
+                            <span className="text-2xl font-bold tracking-tight">Accountability Partners</span>
+                        </div>
+                    </div>
+
+                    <div className="space-y-8">
+                        <h1 className="text-5xl font-bold leading-tight">
+                            Welcome back.<br />
+                            <span className="text-white/80">Your journey continues.</span>
+                        </h1>
+                        <p className="text-xl text-white/70 max-w-md">
+                            Stay connected with your partners, track your progress, and keep each other accountable.
+                        </p>
+
+                        <div className="flex gap-6 pt-4">
+                            <div className="flex items-center gap-3 text-white/70">
+                                <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                                    <Sparkles className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm">Find Partners</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-white/70">
+                                <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                                    <Rocket className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm">Track Goals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p className="text-white/40 text-sm">
+                        © 2026 Accountability Partners. Built with love for builders.
+                    </p>
                 </div>
+            </motion.div>
 
-                {/* Yellow Login Card (Right Side) */}
-                <div className="w-full max-w-md bg-[#ffbe1a] rounded-[2rem] shadow-2xl p-10 flex flex-col pt-12 pb-14 border border-black/5">
-                    <h2 className="text-[#0d1544] text-3xl font-bold text-center mb-8">Login to continue</h2>
+            {/* Right Panel — Login Form */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-background"
+            >
+                <div className="w-full max-w-md space-y-8">
+                    {/* Mobile logo */}
+                    <div className="lg:hidden flex items-center gap-2 justify-center mb-4">
+                        <Heart className="w-6 h-6 fill-current text-primary" />
+                        <span
+                            className="text-xl font-bold tracking-tight cursor-pointer"
+                            onClick={() => navigate("/")}
+                        >
+                            Accountability Partners
+                        </span>
+                    </div>
+
+                    <div className="space-y-2 text-center lg:text-left">
+                        <h2 className="text-3xl font-bold tracking-tight">Sign in</h2>
+                        <p className="text-muted-foreground">
+                            Enter your credentials to continue your journey
+                        </p>
+                    </div>
 
                     <form onSubmit={handleSubmit} className="space-y-5">
-                        {/* Username/Email Input */}
-                        <div className="relative group">
-                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#0d1544] flex items-center justify-center p-1 rounded-full bg-white">
-                                <User className="w-5 h-5" />
+                        <div className="space-y-2">
+                            <label htmlFor="email" className="text-sm font-medium">Email</label>
+                            <div className="relative">
+                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="you@example.com"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="pl-10 h-12"
+                                    required
+                                />
                             </div>
-                            <Input
-                                id="email"
-                                type="email"
-                                placeholder="Username/Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full rounded-full bg-white h-14 pl-14 pr-6 text-base font-medium text-black placeholder:text-gray-400 border-none shadow-sm focus-visible:ring-2 focus-visible:ring-[#0d1544]"
-                                required
-                            />
+                        </div>
+                        <div className="space-y-2">
+                            <div className="flex items-center justify-between">
+                                <label htmlFor="password" className="text-sm font-medium">Password</label>
+                                <span className="text-sm text-primary font-medium cursor-pointer hover:underline">
+                                    Forgot password?
+                                </span>
+                            </div>
+                            <div className="relative">
+                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    placeholder="••••••••"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="pl-10 h-12"
+                                    required
+                                />
+                            </div>
                         </div>
 
-                        {/* Password Input */}
-                        <div className="relative group">
-                            <button
-                                type="button"
-                                onClick={() => setShowPassword(!showPassword)}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#0d1544] flex items-center justify-center p-1 rounded-full bg-white hover:bg-gray-50 transition-colors"
-                            >
-                                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                            </button>
-                            <Input
-                                id="password"
-                                type={showPassword ? "text" : "password"}
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full rounded-full bg-white h-14 pl-14 pr-6 text-base font-medium text-black placeholder:text-gray-400 border-none shadow-sm focus-visible:ring-2 focus-visible:ring-[#0d1544]"
-                                required
-                            />
-                        </div>
-
-                        {/* Remmeber me / Forget password */}
-                        <div className="flex justify-between items-center text-[#0d1544] text-sm font-medium px-2 py-1">
-                            <label className="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" className="w-4 h-4 rounded-full border-2 border-[#0d1544] text-[#0d1544] focus:ring-[#0d1544] bg-transparent cursor-pointer" />
-                                <span>Remember me</span>
-                            </label>
-                            <button type="button" className="hover:underline opacity-80 hover:opacity-100">
-                                Forget password?
-                            </button>
-                        </div>
-
-                        {/* Login Button */}
                         <Button
-                            className="w-full rounded-full bg-[#0d1544] hover:bg-[#080d2b] shadow-lg text-white h-14 text-lg font-bold tracking-wide mt-2"
+                            className="w-full h-12 gradient-brand text-white border-0 text-base font-semibold group"
                             type="submit"
                             disabled={isLoading}
                         >
                             {isLoading ? (
                                 <span className="flex items-center gap-2">
-                                    <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                    Logging in...
+                                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                    Signing in...
                                 </span>
                             ) : (
-                                "Login"
+                                <span className="flex items-center gap-2">
+                                    Sign In
+                                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                </span>
                             )}
                         </Button>
                     </form>
 
-                    {/* Social Login / Sign Up options */}
-                    <div className="mt-8 flex flex-col items-center gap-4 text-[#0d1544] font-medium">
-                        <p className="text-sm">or sign up using</p>
-                        <div className="flex items-center gap-3">
-                            <button type="button" className="w-10 h-10 rounded-full bg-[#1877f2] flex items-center justify-center text-white shadow hover:scale-105 transition-transform" aria-label="Facebook">
-                                <Facebook className="w-5 h-5 fill-current" />
-                            </button>
-                            <button type="button" className="w-10 h-10 rounded-full bg-[#1da1f2] flex items-center justify-center text-white shadow hover:scale-105 transition-transform" aria-label="Twitter">
-                                <Twitter className="w-5 h-5 fill-current" />
-                            </button>
-                            <div className="w-10 h-10 overflow-hidden flex items-center justify-center rounded-full bg-white shadow hover:scale-105 transition-transform cursor-pointer">
-                                <GoogleLogin
-                                    onSuccess={async (credentialResponse) => {
-                                        if (credentialResponse.credential) {
-                                            try {
-                                                setIsLoading(true);
-                                                await loginWithGoogle(credentialResponse.credential);
-                                                toast({ title: "Welcome back!", description: "Successfully logged in with Google." });
-                                                navigate("/journey");
-                                            } catch (err: any) {
-                                                toast({ title: "Login Failed", description: err.message, variant: "destructive" });
-                                            } finally {
-                                                setIsLoading(false);
-                                            }
-                                        }
-                                    }}
-                                    onError={() => {
-                                        toast({ title: "Error", description: "Google Login Failed", variant: "destructive" });
-                                    }}
-                                    useOneTap
-                                    type="icon"
-                                    shape="circle"
-                                />
-                            </div>
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <span className="w-full border-t" />
                         </div>
-                        <p className="text-sm mt-4">
-                            Don't have an account?{" "}
-                            <span
-                                className="font-bold cursor-pointer hover:underline"
-                                onClick={() => navigate("/signup")}
-                            >
-                                Sign up
-                            </span>
-                        </p>
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-background px-3 text-muted-foreground">or continue with</span>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Nav button to go back */}
-            <Button
-                variant="ghost"
-                className="absolute top-6 left-6 z-20 hover:bg-white/20 text-[#0d1544]"
-                onClick={() => navigate("/")}
-            >
-                <Shield className="w-5 h-5 mr-2" /> Back
-            </Button>
+                    <div className="flex justify-center w-full">
+                        <GoogleLogin
+                            text="signin_with"
+                            onSuccess={async (credentialResponse) => {
+                                if (credentialResponse.credential) {
+                                    try {
+                                        setIsLoading(true);
+                                        await loginWithGoogle(credentialResponse.credential);
+                                        toast({ title: "Welcome back!", description: "Successfully logged in with Google." });
+                                        navigate("/journey");
+                                    } catch (err: any) {
+                                        toast({ title: "Login Failed", description: err.message, variant: "destructive" });
+                                    } finally {
+                                        setIsLoading(false);
+                                    }
+                                }
+                            }}
+                            onError={() => {
+                                toast({ title: "Error", description: "Google Login Failed", variant: "destructive" });
+                            }}
+                        />
+                    </div>
+
+                    <p className="text-sm text-center text-muted-foreground pt-4">
+                        Don't have an account?{" "}
+                        <span
+                            className="text-primary font-medium cursor-pointer hover:underline"
+                            onClick={() => navigate("/signup")}
+                        >
+                            Sign up
+                        </span>
+                    </p>
+                </div>
+            </motion.div>
         </div>
     );
 }
