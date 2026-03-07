@@ -59,8 +59,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
         });
-        const data = await res.json();
 
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error("Server is temporarily unavailable. Please try again in a moment.");
+        }
+
+        const data = await res.json();
         if (!res.ok) throw new Error(data.msg || "Login failed");
 
         localStorage.setItem("token", data.token);
@@ -73,8 +78,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password, name })
         });
-        const data = await res.json();
 
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error("Server is temporarily unavailable. Please try again in a moment.");
+        }
+
+        const data = await res.json();
         if (!res.ok) throw new Error(data.msg || "Signup failed");
 
         localStorage.setItem("token", data.token);
@@ -87,8 +97,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ token: credential })
         });
-        const data = await res.json();
 
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error("Server is temporarily unavailable. Please try again in a moment.");
+        }
+
+        const data = await res.json();
         if (!res.ok) throw new Error(data.msg || "Google login failed");
 
         localStorage.setItem("token", data.token);
